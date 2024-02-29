@@ -2,6 +2,7 @@ from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 import json
+import os
 
 
 class SpellCheck:
@@ -47,7 +48,17 @@ class SpellCheck:
     #todo: utiliser le webscrapping pour completer les deux liste
     allowed_models: list[str] = ["gpt-3.5-turbo", ]
     valid_languages: list[str] = ["Anglais", "Français", "Espagnol", "Allemand", "Italien"]
-    json_path: str = "SpellCheck/data/supportedLanguage.json"
+    json_path: str = os.path.join(
+        os.path.split(
+            os.path.dirname(
+                os.path.abspath(
+                    __file__
+                )
+            )
+        )[1],
+        "data",
+        "supportedLanguage.json"
+    )
 
     def __init__(self, api_key: str, language: str, model: str = "gpt-3.5-turbo", temperature: float = 0.3, max: int = 1000) -> None:
         self.llm = self._create_llm(model, temperature, max, api_key)
