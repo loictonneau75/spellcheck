@@ -16,6 +16,10 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+dependencies = [
+    "langchain-core==0.1.27",
+    "langchain-openai==0.0.8"
+]
 
 [project.urls]
 Homepage = "https://github.com/loictonneau75/spellcheck.git"
