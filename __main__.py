@@ -1,4 +1,4 @@
-from SpellCheck.spellcheck import SpellCheck
+from spellcheck.spellcheck import SpellCheck
 from dotenv import load_dotenv
 import os
 
