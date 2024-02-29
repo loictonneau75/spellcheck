@@ -54,6 +54,11 @@ class SpellCheck:
         self.selected_language = self._get_language(language)
         self.prompt = self._prompt()
 
+    def show_supported_language(self):
+        with open(SpellCheck.json_path, 'r') as file:
+            for code, language in json.load(file).items():
+                print(f"langue = {language}, code = {code}")
+
     @staticmethod
     def _load_supported_languages() -> dict[str,str] | FileNotFoundError:
         """
@@ -186,11 +191,3 @@ class SpellCheck:
         )
 
 
-from dotenv import load_dotenv
-import os
-
-load_dotenv()
-key = os.getenv("OPENAI_API_KEY")
-sp = SpellCheck(key, "fr")
-
-print(sp("coucoo coment va tu"))
