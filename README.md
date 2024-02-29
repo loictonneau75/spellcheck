@@ -1,0 +1,1 @@
+SpellCheck is a Python library designed to check and correct spelling errors in texts across multiple languages using OpenAI's large language models (LLMs). It leverages the `langchain_openai.ChatOpenAI` interface to offer a seamless integration for developers looking to enhance their applications with advanced spell checking capabilities.
