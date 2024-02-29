@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spellcheck"
+version = "0.0.1"
+authors = [
+  { name="Loïc TONNEAU", email="loictonneau@gmail.com" },
+]
+description = "SpellCheck is a Python library designed to check and correct spelling errors in texts across multiple language"
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/loictonneau75/spellcheck.git"
+Issues = "https://github.com/loictonneau75/spellcheck.git/issues"
