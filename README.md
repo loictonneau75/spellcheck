@@ -64,3 +64,9 @@ See the [Usage](#usage) section for a simple example. More examples can be added
 ## License
 
 SpellCheck is released under the MIT License. See the [LICENSE](LICENSE.txt) file for more details.
+
+## Contribution
+
+Be free to contribute and open prs or issues to improve the code !
+
+If you want more infos on repos please open an issue !
