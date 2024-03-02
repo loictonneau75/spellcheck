@@ -16,6 +16,7 @@ SpellCheck is a Python library designed to check and correct spelling errors in 
 - [Examples](#examples)
 - [Troubleshooting](#troubleshooting)
 - [License](#license)
+- [Future](#Future)
 
 ## Installation
 To install SpellCheck, run the following command:
@@ -70,3 +71,7 @@ SpellCheck is released under the MIT License. See the [LICENSE](LICENSE.txt) fil
 Be free to contribute and open prs or issues to improve the code !
 
 If you want more infos on repos please open an issue !
+
+## Future
+
+Better managing whitespace
