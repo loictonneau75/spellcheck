@@ -62,6 +62,12 @@ Refer to the code comments for detailed documentation on each method and class u
 
 See the [Usage](#usage) section for a simple example. More examples can be added here as needed.
 
+## Troubleshooting
+
+certain sentences can lead to errors, be sure to check each output carefully
+ex: "invalid choice" gives "I apologize for the error."
+please open an issue if you find another problematic str
+
 ## License
 
 SpellCheck is released under the MIT License. See the [LICENSE](LICENSE.txt) file for more details.
