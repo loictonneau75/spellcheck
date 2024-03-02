@@ -128,7 +128,7 @@ class SpellCheck:
                ("ai", "Tomate"),
                ("user", "bonojur commet allez vous"),
                ("ai", "Bonjour comment allez-vous ?"),
-               ("user", "la phrase a corrigée en {language} est :\n{text}")
+               ("user", 'la phrase a corrigée en {language} est : "{text}"')
            ]
        )
 
