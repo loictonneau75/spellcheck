@@ -108,7 +108,7 @@ class SpellCheck:
         if output[0] == self.YES:
             return output[1]
         else: 
-            raise ValueError("La langue fournie n'existe pas ou n'est pas prise en charge.")
+            raise ValueError(f"La langue fournie n'existe pas ou n'est pas prise en charge.\n value = {language} type = {type(language)}")
 
     def _prompt(self):
         """
@@ -124,11 +124,13 @@ class SpellCheck:
         return ChatPromptTemplate.from_messages(
            [
                ("system", "Tu es un assistant servant à me corriger les fautes d'orthographe en {language} dans des mots/textes."),
-               ("user", "tomtae"),
-               ("ai", "Tomate"),
-               ("user", "bonojur commet allez vous"),
-               ("ai", "Bonjour comment allez-vous ?"),
-               ("user", 'la phrase a corrigée en {language} est : "{text}"')
+               ("user", "la phrase a corriger est : tomtae"),
+               ("ai", "La phrase corrigée est : Tomate"),
+               ("user", "la phrase a corriger est : bonojur commet allez vous"),
+               ("ai", "La phrase corrigée est : Bonjour comment allez-vous ?"),
+               ("user", "La phrase a corriger est : Je vais bien et toi ?"),
+               ("ai", "La phrase corrigée est : Je vais bien et toi "),
+               ("user", "la phrase a corriger est : {text}")
            ]
        )
 
@@ -149,10 +151,13 @@ class SpellCheck:
         """
         parser = StrOutputParser()
         chain = self.prompt | self.llm | parser
-        return chain.invoke(
+        output:str = chain.invoke(
             {
                 "language": self.selected_language,
                 "text": text
             }
         )
+        if output.startswith("La phrase corrigée est : "):
 
+            output = output.replace("La phrase corrigée est : ", "")
+        return output
