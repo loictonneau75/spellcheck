@@ -158,6 +158,13 @@ class SpellCheck:
             }
         )
         if output.startswith("La phrase corrigée est : "):
-
             output = output.replace("La phrase corrigée est : ", "")
+        if output.startswith("Le mot corrigé est : "):
+            output = output.replace("Le mot corrigé est : ", "")
+        if output.startswith("Il n'y a pas de faute dans le mot \""):
+            output= output.replace("Il n'y a pas de faute dans le mot \"", "")
+            output = output.replace("\".","")
+        if output.startswith("Il n'y a pas de faute dans la phrase \""):
+            output= output.replace("Il n'y a pas de faute dans la phrase \"", "")
+            output = output.replace("\".","")
         return output
